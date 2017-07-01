@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 53805d563ab8cb242b6705476bfa5890
+timeCreated: 1468618639
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CricetoEat_0
+    21300002: CricetoEat_1
+    21300004: CricetoEat_2
+    21300006: CricetoEat_3
+    21300008: CricetoEat_4
+    21300010: CricetoEat_5
+    21300012: CricetoEat_6
+    21300014: CricetoEat_7
+    21300016: CricetoEat_8
+    21300018: CricetoEat_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: CricetoEat_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 442
+        width: 217
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 108.5, y: 86.5}
+        - {x: 108.5, y: 105.5}
+        - {x: 87.5, y: 115.5}
+        - {x: 73.5, y: 110.5}
+        - {x: 11.5, y: 136.5}
+        - {x: -17.5, y: 136.5}
+        - {x: -28.5, y: 123.5}
+        - {x: -71.5, y: 106.5}
+        - {x: -70.5, y: 77.5}
+        - {x: -108.5, y: 9.5}
+        - {x: -108.5, y: -81.5}
+        - {x: -107.5, y: -90.5}
+        - {x: -82.5, y: -118.5}
+        - {x: -42.5, y: -136.5}
+        - {x: 65.5, y: -136.5}
+        - {x: 70.5, y: -132.5}
+        - {x: 88.5, y: -71.5}
+        - {x: 92.5, y: 67.5}
+    - name: CricetoEat_1
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 442
+        width: 214
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 104.5}
+        - {x: 94, y: 113.5}
+        - {x: 22, y: 135.5}
+        - {x: -22, y: 135.5}
+        - {x: -29, y: 120.5}
+        - {x: -25, y: 113.5}
+        - {x: -61, y: 106.5}
+        - {x: -64, y: 99.5}
+        - {x: -107, y: 5.5}
+        - {x: -107, y: -73.5}
+        - {x: -100, y: -99.5}
+        - {x: -58, y: -133.5}
+        - {x: -53, y: -135.5}
+        - {x: 82, y: -135.5}
+        - {x: 87, y: -53.5}
+        - {x: 94, y: 55.5}
+        - {x: 107, y: 93.5}
+    - name: CricetoEat_2
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 442
+        width: 216
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 101, y: 93}
+        - {x: 108, y: 101}
+        - {x: 108, y: 114}
+        - {x: 76, y: 127}
+        - {x: 24, y: 137}
+        - {x: -8, y: 137}
+        - {x: -8, y: 135}
+        - {x: -48, y: 134}
+        - {x: -69, y: 121}
+        - {x: -61, y: 77}
+        - {x: -108, y: 7}
+        - {x: -108, y: -96}
+        - {x: -91, y: -133}
+        - {x: -63, y: -137}
+        - {x: 81, y: -137}
+        - {x: 86, y: -110}
+        - {x: 108, y: -25}
+        - {x: 108, y: 33}
+    - name: CricetoEat_3
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 441
+        width: 209
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 99.5, y: 118}
+        - {x: 92.5, y: 120}
+        - {x: 86.5, y: 121}
+        - {x: 78.5, y: 121}
+        - {x: 90.5, y: 121}
+        - {x: 95.5, y: 120}
+        - {x: 104.5, y: 127}
+        - {x: 57.5, y: 139}
+        - {x: -77.5, y: 139}
+        - {x: -104.5, y: 11}
+        - {x: -104.5, y: -116}
+        - {x: -78.5, y: -139}
+        - {x: 87.5, y: -139}
+        - {x: 102.5, y: -137}
+        - {x: 104.5, y: -18}
+        - {x: 104.5, y: 116}
+    - name: CricetoEat_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 441
+        width: 202
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85, y: 128.5}
+        - {x: 81, y: 128.5}
+        - {x: 80, y: 129.5}
+        - {x: 82, y: 128.5}
+        - {x: 88, y: 128.5}
+        - {x: 89, y: 127.5}
+        - {x: 94, y: 126.5}
+        - {x: 101, y: 125.5}
+        - {x: 101, y: 140.5}
+        - {x: -39, y: 140.5}
+        - {x: -101, y: 121.5}
+        - {x: -101, y: -108.5}
+        - {x: -74, y: -140.5}
+        - {x: 75, y: -140.5}
+        - {x: 100, y: -134.5}
+        - {x: 96, y: 58.5}
+        - {x: 91, y: 126.5}
+    - name: CricetoEat_5
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 73
+        width: 202
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75, y: -122}
+        - {x: 70, y: -124}
+        - {x: 69, y: -125}
+        - {x: 66, y: -125}
+        - {x: 68, y: -125}
+        - {x: 78, y: -116}
+        - {x: 99, y: -76}
+        - {x: 101, y: -41}
+        - {x: 101, y: 142}
+        - {x: -24, y: 142}
+        - {x: -25, y: 129}
+        - {x: -68, y: 104}
+        - {x: -101, y: 8}
+        - {x: -101, y: -142}
+        - {x: 95, y: -142}
+        - {x: 101, y: -136}
+        - {x: 101, y: -135}
+        - {x: 90, y: -122}
+    - name: CricetoEat_6
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 71
+        width: 202
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 97, y: 55.5}
+        - {x: 91, y: 126.5}
+        - {x: 85, y: 128.5}
+        - {x: 81, y: 128.5}
+        - {x: 80, y: 129.5}
+        - {x: 82, y: 128.5}
+        - {x: 88, y: 128.5}
+        - {x: 89, y: 127.5}
+        - {x: 94, y: 126.5}
+        - {x: 101, y: 125.5}
+        - {x: 101, y: 138.5}
+        - {x: 94, y: 140.5}
+        - {x: -37, y: 140.5}
+        - {x: -82, y: 105.5}
+        - {x: -101, y: 8.5}
+        - {x: -101, y: -114.5}
+        - {x: -71, y: -140.5}
+        - {x: 89, y: -140.5}
+        - {x: 95, y: -132.5}
+        - {x: 90, y: -120.5}
+        - {x: 99, y: -59.5}
+    - name: CricetoEat_7
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 71
+        width: 209
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 92.5, y: 120}
+        - {x: 86.5, y: 121}
+        - {x: 78.5, y: 121}
+        - {x: 90.5, y: 121}
+        - {x: 95.5, y: 120}
+        - {x: 104.5, y: 127}
+        - {x: 57.5, y: 139}
+        - {x: -63.5, y: 139}
+        - {x: -64.5, y: 138}
+        - {x: -58.5, y: 93}
+        - {x: -104.5, y: -1}
+        - {x: -104.5, y: -108}
+        - {x: -83.5, y: -139}
+        - {x: 104.5, y: -139}
+        - {x: 104.5, y: 119}
+        - {x: 99.5, y: 118}
+    - name: CricetoEat_8
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 72
+        width: 216
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 101, y: 93}
+        - {x: 108, y: 101}
+        - {x: 108, y: 114}
+        - {x: 76, y: 127}
+        - {x: 24, y: 137}
+        - {x: -8, y: 137}
+        - {x: -8, y: 135}
+        - {x: -48, y: 134}
+        - {x: -69, y: 121}
+        - {x: -61, y: 77}
+        - {x: -108, y: 7}
+        - {x: -108, y: -96}
+        - {x: -91, y: -133}
+        - {x: -63, y: -137}
+        - {x: 81, y: -137}
+        - {x: 86, y: -110}
+        - {x: 108, y: -25}
+        - {x: 108, y: 33}
+    - name: CricetoEat_9
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 73
+        width: 214
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 104.5}
+        - {x: 94, y: 113.5}
+        - {x: 22, y: 135.5}
+        - {x: -22, y: 135.5}
+        - {x: -29, y: 120.5}
+        - {x: -25, y: 113.5}
+        - {x: -61, y: 106.5}
+        - {x: -64, y: 99.5}
+        - {x: -107, y: 5.5}
+        - {x: -107, y: -73.5}
+        - {x: -100, y: -99.5}
+        - {x: -58, y: -133.5}
+        - {x: -53, y: -135.5}
+        - {x: 82, y: -135.5}
+        - {x: 87, y: -53.5}
+        - {x: 94, y: 55.5}
+        - {x: 107, y: 93.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

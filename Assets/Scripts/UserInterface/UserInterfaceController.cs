@@ -11,6 +11,12 @@ public class UserInterfaceController : MonoBehaviour {
 	GameOverUI gameOverUI;
 	[SerializeField]
 	PointsUI pointsUI;
+	[SerializeField]
+	GameObject vignette;
+
+	public bool IsStartMenuVisible{ get { return startScreen.IsVisible; } }
+	public bool IsGameOvertMenuVisible{ get { return gameOverUI.IsVisible; } }
+
 
 	void Awake () {
 		if (_instance == null)
@@ -27,6 +33,7 @@ public class UserInterfaceController : MonoBehaviour {
 	}
 	
 	public void ShowStartScreen(){
+		vignette.SetActive (true);
 		startScreen.Show ();
 	}
 
@@ -35,6 +42,8 @@ public class UserInterfaceController : MonoBehaviour {
 	}
 
 	public void ShowGameOver(){
+		vignette.SetActive (true);
+
 		gameOverUI.ShowGameOverUI ();
 	}
 
@@ -44,6 +53,7 @@ public class UserInterfaceController : MonoBehaviour {
 
 
 	public void ShowPointUI(){
+		vignette.SetActive (false);
 		pointsUI.Show ();
 	}
 

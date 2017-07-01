@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class HamsterMovement : MonoBehaviour {
+	public Action OnMove;
 
 	[SerializeField]
 	float speed;
+	[SerializeField]
+	MobileController mobileController;
 
 	HamsterAnimation hamsterAnimation;
 
@@ -18,7 +22,11 @@ public class HamsterMovement : MonoBehaviour {
 
 	void Movement(){
 
+		#if UNITY_ANDROID	
+		float h = mobileController.GetHorizontal();
+		#else
 		float h = Input.GetAxis ("Horizontal");
+		#endif
 
 		if (IsOnScreenBorder (h)) {
 			hamsterAnimation.StopWalkAnimation ();
@@ -31,6 +39,8 @@ public class HamsterMovement : MonoBehaviour {
 		if (h != 0 && !HamsterController.Instance.Died) {
 			hamsterAnimation.WalkAnimation ();
 
+			if (OnMove != null)
+				OnMove ();
 		} else {
 			hamsterAnimation.StopWalkAnimation ();
 		}

@@ -5,6 +5,9 @@ using System.Collections;
 public class HamsterAnimation : MonoBehaviour {
 	Animator animator;
 
+	[SerializeField]
+	ParticleSystem zzz;
+
 	void Awake(){
 		animator = GetComponent<Animator> ();
 	}
@@ -23,6 +26,12 @@ public class HamsterAnimation : MonoBehaviour {
 
 	public void StopDieAnimation(){
 		animator.SetBool ("Die", false);
+		zzz.Stop ();
+		zzz.Clear ();
+	}
+
+	public void PlayZZZ(){
+		zzz.Play ();
 	}
 
 	public void EatAnimation(){

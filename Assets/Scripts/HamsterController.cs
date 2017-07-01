@@ -8,6 +8,7 @@ public class HamsterController : MonoBehaviour {
 	static HamsterController _instance;
 	public static HamsterController Instance{ get { return _instance; } }
 
+
 	SpriteRenderer spriteRenderer;
 	HamsterMovement hamsterMovement;
 	BoxCollider boxCollider;
@@ -45,6 +46,7 @@ public class HamsterController : MonoBehaviour {
 	}
 	
 	public void DisableHamster(){
+		hamsterAnimation.StopDieAnimation ();
 		boxCollider.enabled = false;
 		spriteRenderer.enabled = false;
 		hamsterMovement.enabled = false;
@@ -56,7 +58,12 @@ public class HamsterController : MonoBehaviour {
 	}
 
 	public void Die(){
+		StartCoroutine (DieRoutine ());
+	}
+
+	IEnumerator DieRoutine(){
 		Died = true;
+		yield return new WaitForSeconds (0.6f);
 		StopMovement ();
 		hamsterAnimation.StopWalkAnimation ();
 		hamsterAnimation.DieAnimation ();

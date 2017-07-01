@@ -33,4 +33,5 @@ public class PointsUI : MonoBehaviour {
 		marshmallowsNumber.text = GameController.Instance.Marshmallows.ToString ();
 	}
 
+
 }

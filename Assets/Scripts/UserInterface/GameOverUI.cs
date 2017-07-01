@@ -10,6 +10,8 @@ public class GameOverUI : MonoBehaviour {
 	[SerializeField]
 	Text recordnumber;
 
+	public bool IsVisible{ get { return menuHider.IsVisible; } }
+
 	void Awake(){
 		menuHider = GetComponent<MenuHider> ();
 	}

@@ -9,14 +9,14 @@ public class HamsterController : MonoBehaviour {
 	public static HamsterController Instance{ get { return _instance; } }
 
 
-	SpriteRenderer spriteRenderer;
-	HamsterMovement hamsterMovement;
-	BoxCollider boxCollider;
-	HamsterAnimation hamsterAnimation;
+	SpriteRenderer _spriteRenderer;
+	HamsterMovement _hamsterMovement;
+	BoxCollider _boxCollider;
+	HamsterAnimation _hamsterAnimation;
 
-	Vector3 startPosition;
+	Vector3 _startPosition;
 
-	public bool Died{ get; set; }
+	public bool IsDied{ get; set; }
 
 	void Awake () {
 		if (_instance == null)
@@ -24,54 +24,73 @@ public class HamsterController : MonoBehaviour {
 		else
 			Destroy (gameObject);
 
-		DontDestroyOnLoad (gameObject);
 
 		InitOnAwake ();
 
 	}
 
-	void InitOnAwake(){
-		spriteRenderer = GetComponent<SpriteRenderer> ();
-		hamsterMovement = GetComponent<HamsterMovement> ();
-		boxCollider = GetComponent<BoxCollider> ();
-		hamsterAnimation = GetComponent<HamsterAnimation> ();
 
-		startPosition = transform.position;
+    // Recuper i componenti
+	void InitOnAwake(){
+		_spriteRenderer = GetComponent<SpriteRenderer> ();
+		_hamsterMovement = GetComponent<HamsterMovement> ();
+		_boxCollider = GetComponent<BoxCollider> ();
+		_hamsterAnimation = GetComponent<HamsterAnimation> ();
+
+		_startPosition = transform.position;
 	}
 
+
+    // Abilita il personaggio
 	public void EnableHamster(){
-		boxCollider.enabled = true;
-		spriteRenderer.enabled = true;
-		hamsterMovement.enabled = true;
+		_boxCollider.enabled = true;
+		_spriteRenderer.enabled = true;
+		_hamsterMovement.enabled = true;
 	}
 	
+
+    // Disabilita e nasconde
 	public void DisableHamster(){
-		hamsterAnimation.StopDieAnimation ();
-		boxCollider.enabled = false;
-		spriteRenderer.enabled = false;
-		hamsterMovement.enabled = false;
+		_hamsterAnimation.StopDieAnimation ();
+		_boxCollider.enabled = false;
+		_spriteRenderer.enabled = false;
+		_hamsterMovement.enabled = false;
 	}
 
+
+    // Disabilita i controlli (es. quando muore)
 	public void StopMovement(){
-		boxCollider.enabled = false;
-		hamsterMovement.enabled = false;
+		_boxCollider.enabled = false;
+		_hamsterMovement.enabled = false;
 	}
 
+
+    // Il personaggio muore. Fa partire la coroutine che disabilita i controlli e abilità l'animazione 
 	public void Die(){
 		StartCoroutine (DieRoutine ());
 	}
 
+
+
 	IEnumerator DieRoutine(){
-		Died = true;
+
+		IsDied = true;
+
 		yield return new WaitForSeconds (0.6f);
+
+        // Disabilito i controlli
 		StopMovement ();
-		hamsterAnimation.StopWalkAnimation ();
-		hamsterAnimation.DieAnimation ();
+
+        // Faccio partire l'animazione della morte del personaggio
+		_hamsterAnimation.StopWalkAnimation ();
+		_hamsterAnimation.DieAnimation ();
 	}
 
+
+    // Ripristino per una nuova partita
 	public void Reset(){
-		Died = false;
-		transform.position = startPosition;
-		hamsterMovement.Reset ();
+		IsDied = false;
+		transform.position = _startPosition;
+		_hamsterMovement.Reset ();
 	}
 }

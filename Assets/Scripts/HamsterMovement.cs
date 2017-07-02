@@ -36,7 +36,7 @@ public class HamsterMovement : MonoBehaviour {
 
 		transform.position += Vector3.right * h * speed * Time.deltaTime;
 
-		if (h != 0 && !HamsterController.Instance.Died) {
+		if (h != 0 && !HamsterController.Instance.IsDied) {
 			hamsterAnimation.WalkAnimation ();
 
 			if (OnMove != null)

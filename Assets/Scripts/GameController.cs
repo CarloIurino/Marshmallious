@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.ImageEffects;
 using System;
 
 public class GameController : MonoBehaviour {
@@ -17,7 +16,6 @@ public class GameController : MonoBehaviour {
 	[SerializeField]
 	PresentationController presentationController;
 
-	DepthOfField depthOfField;
 
 	public bool IsFirstStart { get; set; }
 
@@ -49,8 +47,6 @@ public class GameController : MonoBehaviour {
 	void InitOnAwake(){
 		IsFirstStart = true;
 		HamsterController.Instance.DisableHamster ();
-		depthOfField = Camera.main.GetComponent<DepthOfField> ();
-		depthOfField.enabled = false;
 	}
 		
 

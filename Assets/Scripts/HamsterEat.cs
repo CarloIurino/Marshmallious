@@ -5,63 +5,92 @@ public class HamsterEat : MonoBehaviour {
 
 	HamsterAnimation hamsterAnimation;
 
+    // Effetti particellari delle briciole quando vengono magiati i marshmallows
 	[SerializeField]
-	ParticleSystem crumbs;
+	ParticleSystem _crumbs;
 	[SerializeField]
-	ParticleSystem badCrumbs;
+	ParticleSystem _badCrumbs;
 
-	BoxCollider boxCollider;
+    // E' il collider che rileva un marshmallow vicino la bocca
+	BoxCollider _boxCollider;
 
-	MarshMallowBehaviour target;
+
+    // Il marshmallow che verrà inghiottito
+	MarshMallowBehaviour _targetMarshmallow;
 
 	void Awake(){
 		hamsterAnimation = GetComponent<HamsterAnimation> ();
-		boxCollider = GetComponent<BoxCollider> ();
+		_boxCollider = GetComponent<BoxCollider> ();
 	}
 
 	
+    // Quando un marshmallow è vicino alla bocca
 	void OnTriggerEnter( Collider c ){
 		if (c.CompareTag ("Marshmallow") || c.CompareTag("BlackMarshmallow") ) {
-			target = c.gameObject.GetComponent<MarshMallowBehaviour>();
-			target.SetAsTarget ();
+			_targetMarshmallow = c.gameObject.GetComponent<MarshMallowBehaviour>();
+
+            // Il marshmallow viene impostato come target. Viene cambiato il colore e si avvicina alla bocca
+			_targetMarshmallow.SetAsTarget ();
+
 			PrepareEat ();
 		}
 	}
 
+
+    // Il topolino si prepara a mangiare il marshmallow target.
+    // Durante questa fase non può mangiare altro finche non mangia il target poichè il collider viene disabilitato.
+    // Il target può essere a una certa distanza dalla bocca, quindi si avvicina finchè non viene inghiottito
 	void PrepareEat(){
-		if (HamsterController.Instance.Died)
+		if (HamsterController.Instance.IsDied)
 			return;
 		
-		boxCollider.enabled = false;
+		_boxCollider.enabled = false;
+
+        // Viene lanciata l'animazione mangia che contiene l'evento Eat() quando la bocca viene spalancata
 		hamsterAnimation.EatAnimation ();
 	}
 
+
+    // Mangia il marshmallow
+    // E' chiamato da un evento nell'animazione, quando la bocca è spalancata
 	public void Eat(){
-		if (target == null)
+		if (_targetMarshmallow == null)
 			return;
 
-		if (HamsterController.Instance.Died)
+		if (HamsterController.Instance.IsDied)
 			return;
 
+        // Eseguo il suono che mangia
 		SoundManager.Instance.EatingSound ();
 
-		if (target.CompareTag ("BlackMarshmallow")) {
+
+        // Controllo se è un marshmallow buono o brutto
+		if (_targetMarshmallow.CompareTag ("BlackMarshmallow")) {
+
+            // Marshmallow brutto, fa addormentare il topolino
 			GameController.Instance.GameOver ();
-			badCrumbs.Play ();
+			_badCrumbs.Play ();
 		}
-		else if (target.CompareTag ("Marshmallow")){
-//			particles.Play ();
-			GameController.Instance.TakeMarshMallow();
-			crumbs.Play ();
+		else if (_targetMarshmallow.CompareTag ("Marshmallow")){
+
+            // Marshmallow buono
+
+            // Segnalo al gameController che è stato magiato un marshmallow buono, si occuperà di aumentare i punti e altro
+            GameController.Instance.TakeMarshMallow();
+
+            // Eseguo effetto particellare
+			_crumbs.Play ();
 		}
 
-		Destroy (target.gameObject);
+        // Distruggo il marshmallow mangiato
+		Destroy (_targetMarshmallow.gameObject);
 			
 	}
 
+    // Riabilito il collider per mangiare altri marshmallow
 	public void FinishEat(){
-		boxCollider.enabled = true;
-		target = null;
+		_boxCollider.enabled = true;
+		_targetMarshmallow = null;
 	}
 
 }

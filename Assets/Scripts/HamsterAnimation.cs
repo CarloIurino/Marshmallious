@@ -6,7 +6,7 @@ public class HamsterAnimation : MonoBehaviour {
 	Animator animator;
 
 	[SerializeField]
-	ParticleSystem zzz;
+	ParticleSystem _zzzParticles;
 
 	void Awake(){
 		animator = GetComponent<Animator> ();
@@ -26,12 +26,12 @@ public class HamsterAnimation : MonoBehaviour {
 
 	public void StopDieAnimation(){
 		animator.SetBool ("Die", false);
-		zzz.Stop ();
-		zzz.Clear ();
+		_zzzParticles.Stop ();
+		_zzzParticles.Clear ();
 	}
 
 	public void PlayZZZ(){
-		zzz.Play ();
+		_zzzParticles.Play ();
 	}
 
 	public void EatAnimation(){

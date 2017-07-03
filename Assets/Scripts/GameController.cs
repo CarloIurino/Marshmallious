@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	void Start(){
-		MarshmallowController.Instance.MenuRain (0.2f, 0.5f);
+		MarshmallowsManager.Instance.MenuRain (0.2f, 0.5f);
 		Blur (true);
 	}
 
@@ -69,8 +69,8 @@ public class GameController : MonoBehaviour {
 		HamsterController.Instance.Reset ();
 		HamsterController.Instance.EnableHamster ();
 
-		MarshmallowController.Instance.StopRain ();
-		MarshmallowController.Instance.GameRain ();
+		MarshmallowsManager.Instance.StopRain ();
+		MarshmallowsManager.Instance.GameRain ();
 	}
 		
 
@@ -97,8 +97,8 @@ public class GameController : MonoBehaviour {
 		if (OnGameOver != null)
 			OnGameOver ();
 
-		MarshmallowController.Instance.StopRain ();
-		MarshmallowController.Instance.MenuRain (0.2f, 0.5f);
+		MarshmallowsManager.Instance.StopRain ();
+		MarshmallowsManager.Instance.MenuRain (0.2f, 0.5f);
 		SoundManager.Instance.PlayGameOver ();
 		UserInterfaceController.Instance.HidePointUI ();
 		UserInterfaceController.Instance.ShowGameOver ();

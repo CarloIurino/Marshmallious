@@ -4,14 +4,11 @@ using System.Collections;
 
 /// <summary>
 /// La camera segue il personaggio a destra e sinistra e si blocca ai limiti dello sfondo.
-/// Si devono passare i riferimenti dei bordi, due oggetti vuoti posizionati poco prima del bordo dello sfondo
 /// </summary>
 
 public class CameraStopsOnEdges : MonoBehaviour {
-	[SerializeField]
-	private Transform _leftEdge;    // Limite sinistro dove la camera dovrebbe smettere di seguire il personaggio
-	[SerializeField]
-    private Transform _rightEdge;   // Limite destro dove la camera dovrebbe smettere di seguire il personaggio
+    [SerializeField] Renderer _background;
+	
     [SerializeField]
     private float _smoothTime;      // Quanto è veloce la camera a seguire il personaggio
 
@@ -21,9 +18,15 @@ public class CameraStopsOnEdges : MonoBehaviour {
     // Il target da seguire con la camera
     private Transform _target;
 
+    // I marrgini del background
+    private Vector3 _leftPosition;
+    private Vector3 _rightPosition;
 
-	void Start(){
+    void Start(){
 		_target = GameObject.FindGameObjectWithTag ("Player").transform;
+
+        _leftPosition = _background.bounds.min;
+        _rightPosition = _background.bounds.max;
 	}
 
 
@@ -63,8 +66,8 @@ public class CameraStopsOnEdges : MonoBehaviour {
 			
         // Quando la posizione dei limiti di riferimento entrano nella visuale della camera
         // ritorno true, altrimenti false
-		if (Camera.main.WorldToScreenPoint (_leftEdge.position).x >= 0 || 
-            Camera.main.WorldToScreenPoint(_rightEdge.position).x <= Screen.width) {
+		if (Camera.main.WorldToScreenPoint (_leftPosition).x >= 0 || 
+            Camera.main.WorldToScreenPoint(_rightPosition).x <= Screen.width) {
 
 			_velocity = Vector3.zero;
 

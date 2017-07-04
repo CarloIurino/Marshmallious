@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour {
 	public Action OnPauseGame;
 	public Action OnUnpauseGame;
 
+    [SerializeField] public GameConfigScriptableObject data;
+
 	[SerializeField]
 	PresentationController presentationController;
 

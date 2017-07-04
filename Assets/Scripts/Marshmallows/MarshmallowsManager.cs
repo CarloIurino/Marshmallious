@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(MarshmallowPooling))]
 public class MarshmallowsManager : MonoBehaviour {
 	static MarshmallowsManager _instance;
 	public static MarshmallowsManager Instance{ get{ return _instance;}}
+
+    public MarshmallowPooling pooling;
 
 	int lastMarshmallowXPosition = int.MinValue;
 
@@ -17,7 +20,9 @@ public class MarshmallowsManager : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 	}
 
-	public void MenuRain(float intensity, float blackMarshmallowFrequency){
+
+
+    public void MenuRain(float intensity, float blackMarshmallowFrequency){
 		StartCoroutine ("SpawnMarshMallowRoutine" , new object[2]{intensity, blackMarshmallowFrequency});
 	}
 
@@ -52,18 +57,21 @@ public class MarshmallowsManager : MonoBehaviour {
 	}
 
 	void SpawnMarshmallow(float blackMarshmallowFrequency){
-		string randomMarshmallow;
+        Marshmallow marshmallow;
 
-		if (Random.value > blackMarshmallowFrequency) {
-			randomMarshmallow = "MarshMallow";
-		}
-		else
-			randomMarshmallow = "BlackMarshMallow";
+        if (Random.value > blackMarshmallowFrequency) {
+            marshmallow = pooling.GetMarshmallow( MarshmallowType.Good);
+        }
+        else
+            marshmallow = pooling.GetMarshmallow(MarshmallowType.Bad);
 
-		int randomXPosition = FindXPosition ();
 
-		GameObject m = (GameObject) Instantiate (Resources.Load (randomMarshmallow), new Vector3 (randomXPosition, 3, -3), Random.rotation);
-		m.transform.parent = transform;
+        int randomXPosition = FindXPosition ();
+
+        marshmallow.transform.position = new Vector3(randomXPosition, 3, -3);
+        marshmallow.transform.rotation = Random.rotation;
+
+        marshmallow.transform.parent = transform;
 	}
 
 	int FindXPosition(){
@@ -88,14 +96,13 @@ public class MarshmallowsManager : MonoBehaviour {
 		return newXPosition;
 	}
 
-	void DestroyMarshmallows(){
-		Transform[] marshmallows = GetComponentsInChildren<Transform> ();
 
-		foreach (Transform t in marshmallows) {
-			if ( t != transform)
-				Destroy (t.gameObject);
-		}
+
+    void DestroyMarshmallows(){
+        pooling.DestroyLists();
 	}
+
+
 
 
 }

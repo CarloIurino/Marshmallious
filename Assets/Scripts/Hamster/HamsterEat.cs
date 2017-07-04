@@ -16,7 +16,7 @@ public class HamsterEat : MonoBehaviour {
 
 
     // Il marshmallow che verrà inghiottito
-	MarshMallowBehaviour _targetMarshmallow;
+	Marshmallow _targetMarshmallow;
 
 	void Awake(){
 		hamsterAnimation = GetComponent<HamsterAnimation> ();
@@ -27,7 +27,7 @@ public class HamsterEat : MonoBehaviour {
     // Quando un marshmallow è vicino alla bocca
 	void OnTriggerEnter( Collider c ){
 		if (c.CompareTag ("Marshmallow") || c.CompareTag("BlackMarshmallow") ) {
-			_targetMarshmallow = c.gameObject.GetComponent<MarshMallowBehaviour>();
+			_targetMarshmallow = c.gameObject.GetComponent<Marshmallow>();
 
             // Il marshmallow viene impostato come target. Viene cambiato il colore e si avvicina alla bocca
 			_targetMarshmallow.SetAsTarget ();
@@ -82,8 +82,8 @@ public class HamsterEat : MonoBehaviour {
 			_crumbs.Play ();
 		}
 
-        // Distruggo il marshmallow mangiato
-		Destroy (_targetMarshmallow.gameObject);
+        // Disattivo il marshmallow mangiato
+        _targetMarshmallow.gameObject.SetActive(false);
 			
 	}
 
